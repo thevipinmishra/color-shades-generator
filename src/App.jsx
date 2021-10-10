@@ -83,18 +83,55 @@ const App = () => {
             </div>
           </div>
           <div className="shades-grid wrapper">
-            {shades.map((shade) => (
-              <CopyToClipboard
-                text={shade}
-                onCopy={() => handleCopyStatus()}
-                key={uuidv4()}
-              >
-                <div className="shade-item">
-                  <div className="preview" style={{ background: shade }}></div>
-                  <span className="color-code">{shade}</span>
-                </div>
-              </CopyToClipboard>
-            ))}
+            <div className="light-shades">
+              <div className="header">
+                <h3>Light Shades</h3>
+                <small>
+                  May produce unexpected results if the initial color is already
+                  very light.
+                </small>
+              </div>
+              {shades.slice(0, 10).map((shade) => (
+                <CopyToClipboard
+                  text={shade}
+                  onCopy={() => handleCopyStatus()}
+                  key={uuidv4()}
+                >
+                  <div className="shade-item">
+                    <div
+                      className="preview"
+                      style={{ background: shade }}
+                    ></div>
+                    <span className="color-code">{shade}</span>
+                  </div>
+                </CopyToClipboard>
+              ))}
+            </div>
+
+            <div className="dark-shades">
+              <div className="header">
+                <h3>Dark Shades</h3>
+                <small>
+                  May produce unexpected results if the initial color is already
+                  very dark.
+                </small>
+              </div>
+              {shades.slice(10, 20).map((shade) => (
+                <CopyToClipboard
+                  text={shade}
+                  onCopy={() => handleCopyStatus()}
+                  key={uuidv4()}
+                >
+                  <div className="shade-item">
+                    <div
+                      className="preview"
+                      style={{ background: shade }}
+                    ></div>
+                    <span className="color-code">{shade}</span>
+                  </div>
+                </CopyToClipboard>
+              ))}
+            </div>
           </div>
         </>
       ) : (
