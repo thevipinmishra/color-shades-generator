@@ -1,0 +1,23 @@
+{
+  "name": "color-shades-generator",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "@fontsource/jost": "^4.5.0",
+    "@fontsource/space-mono": "^4.5.0",
+    "color": "^4.0.1",
+    "react": "^17.0.0",
+    "react-copy-to-clipboard": "^5.0.4",
+    "react-dom": "^17.0.0",
+    "sass": "^1.42.1",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^1.0.0",
+    "vite": "^2.6.4"
+  }
+}
