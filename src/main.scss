@@ -31,15 +31,12 @@ body {
   overflow-x: hidden;
 }
 
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    margin-bottom: -2rem;
+@keyframes slide-top {
+  0% {
+    bottom: 0;
   }
-
-  to {
-    opacity: 1;
-    margin-bottom: 0;
+  100% {
+    bottom: 60px;
   }
 }
 
@@ -50,16 +47,16 @@ body {
 
   .loading-placeholder {
     flex: 1;
-    padding-block: 2rem;
+    padding-block: 3rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     color: var(--text-muted);
 
     & > h3 {
-      font-size: 1.5rem;
-      margin-top: 0.5rem;
-      font-weight: 800;
+      font-size: 1.25rem;
+      margin-top: 0.75rem;
+      font-weight: 600;
     }
   }
 
@@ -69,6 +66,7 @@ body {
 
     p {
       font-size: 1.125rem;
+      font-weight: 600;
     }
     a {
       text-decoration: underline;
@@ -82,13 +80,15 @@ body {
     left: 50%;
     transform: translateX(-50%);
     background-color: #fff;
-    border: 2px solid #9b59b6;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+      rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    border: 2px solid rgba(0, 0, 0, 0.15);
     border-radius: var(--radius);
     padding: 0.5rem 2rem;
     font-size: 1.5rem;
     font-weight: 800;
     z-index: 999;
-    animation: slideUp 200ms ease;
+    animation: slide-top 200ms cubic-bezier(0.215, 0.61, 0.355, 1) both;
   }
 }
 
@@ -113,7 +113,8 @@ body {
   }
 
   .description {
-    max-width: 40ch;
+    max-width: 30ch;
+    line-height: 1.7;
     margin: 0.5rem auto 0 auto;
     color: var(--text-muted);
 
@@ -126,7 +127,6 @@ body {
 .color-input {
   padding: 3rem 0;
   background-color: #9b59b6;
-  border-radius: var(--radius);
 
   .input-helper-text {
     display: block;
@@ -152,7 +152,7 @@ body {
     input[type="text"] {
       display: block;
       width: 100%;
-      padding: 0.75rem;
+      padding: 1rem;
       outline: none;
       border: none;
       background-color: #fff;

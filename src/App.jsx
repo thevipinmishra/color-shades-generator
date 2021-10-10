@@ -72,12 +72,12 @@ const App = () => {
               <p>{input && Color(input).isDark() ? "Dark" : "Light"}</p>
             </div>
 
-            <div className="color-luminosity info-box">
+            <div className="color-hsl info-box">
               <h5>HSL Value</h5>
               <p>{input && Color(input).hsl().string(0)}</p>
             </div>
 
-            <div className="color-contrast info-box">
+            <div className="color-rgb info-box">
               <h5>RBG Value</h5>
               <p> {input && Color(input).rgb().toString()}</p>
             </div>
@@ -99,7 +99,7 @@ const App = () => {
         </>
       ) : (
         <div className="loading-placeholder wrapper">
-          <img src={loading} alt="" width="200" height="200" />
+          <img src={loading} alt="" width="100" height="100" />
           <h3>Waiting for a Color Input...</h3>
         </div>
       )}
