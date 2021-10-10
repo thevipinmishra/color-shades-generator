@@ -1,7 +1,10 @@
 {
+  "homepage": "https://thevipinmishra.github.io/color-shades-generator",
   "name": "color-shades-generator",
   "version": "0.0.0",
   "scripts": {
+    "predeploy": "vite build",
+    "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview"
@@ -10,6 +13,7 @@
     "@fontsource/jost": "^4.5.0",
     "@fontsource/space-mono": "^4.5.0",
     "color": "^4.0.1",
+    "gh-pages": "^3.2.3",
     "react": "^17.0.0",
     "react-copy-to-clipboard": "^5.0.4",
     "react-dom": "^17.0.0",
