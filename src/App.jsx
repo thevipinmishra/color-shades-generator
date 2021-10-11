@@ -68,18 +68,35 @@ const App = () => {
         <>
           <div className="color-info wrapper">
             <div className="color-type info-box">
-              <h5>Color Type</h5>
-              <p>{input && Color(input).isDark() ? "Dark" : "Light"}</p>
+              <div>
+                <h5>Color Type</h5>
+                <p>{input && Color(input).isDark() ? "Dark" : "Light"}</p>
+              </div>
+
+              <div
+                className="color-preview"
+                style={{ background: input }}
+              ></div>
             </div>
 
             <div className="color-hsl info-box">
               <h5>HSL Value</h5>
-              <p>{input && Color(input).hsl().string(0)}</p>
+              <CopyToClipboard
+                text={Color(input).hsl().string(0)}
+                onCopy={() => handleCopyStatus()}
+              >
+                <button>{input && Color(input).hsl().string(0)}</button>
+              </CopyToClipboard>
             </div>
 
             <div className="color-rgb info-box">
               <h5>RBG Value</h5>
-              <p> {input && Color(input).rgb().toString()}</p>
+              <CopyToClipboard
+                text={Color(input).rgb().toString()}
+                onCopy={() => handleCopyStatus()}
+              >
+                <button>{input && Color(input).rgb().toString()}</button>
+              </CopyToClipboard>
             </div>
           </div>
           <div className="shades-grid wrapper">
