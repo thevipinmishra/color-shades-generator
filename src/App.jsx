@@ -41,7 +41,7 @@ const App = () => {
         <h1 className="headline">Color Shades Generator 🍕</h1>
         <p className="description">
           Put any Hex Color Code (3 or 6 digit) and you&#39;ll get 20 different
-          shades!
+          (probably) shades!
         </p>
       </header>
 
